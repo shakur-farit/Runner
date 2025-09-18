@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124795963ba4c97429b13503f6842e97, type: 3}
   m_Name: HeroConfig
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1316599661870352749, guid: 09c1b42d1597ce74795725a09d03bd0c, type: 3}
-  MovementSpeed: 0
+  Prefab: {fileID: 7490962443677775242, guid: 690f26908b2ca5b449a60d9029757a8b, type: 3}
+  MovementSpeed: 15
+  JumpForce: 10
+  GroundCheckRadius: 0.2

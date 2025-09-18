@@ -21,7 +21,7 @@ namespace Code.Infrastructure.Installers
 
 			Hero hero = _instantiator.InstantiatePrefabForComponent<Hero>(config.Prefab);
 
-			hero.SetStartPosition(at);
+			hero.Setup(at, config.MovementSpeed, config.JumpForce, config.GroundCheckRadius);
 
 			return hero;
 		}

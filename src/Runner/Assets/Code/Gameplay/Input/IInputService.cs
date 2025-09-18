@@ -13,5 +13,8 @@ namespace Code.Infrastructure.Installers
 		Vector2 GetScreenMousePosition();
 		Vector2 GetWorldMousePosition();
 		bool GetLeftMouseButtonUp();
-	}
+    bool GetJumpButton();
+    bool GetJumpButtonDown();
+    bool GetJumpButtonUp();
+  }
 }

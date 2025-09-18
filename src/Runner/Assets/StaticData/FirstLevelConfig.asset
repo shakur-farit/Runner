@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 1
   Environment: {fileID: 5717373771771427227, guid: cd0e74543748ad141b4657d7008932bb, type: 3}
-  StartHeroPosition: {x: 0, y: 2, z: -180}
+  StartHeroPosition: {x: 0, y: 0.5, z: -180}
   FinishXPosiotin: 0

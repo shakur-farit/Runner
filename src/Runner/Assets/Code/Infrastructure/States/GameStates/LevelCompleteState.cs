@@ -1,14 +1,20 @@
 using Code.Infrastructure.States.Infrastructure;
+using Code.Meta.Ui.Windows;
+using Code.Meta.Ui.Windows.Factory;
 
 namespace Code.Infrastructure.States.GameStates
 {
 	public class LevelCompleteState : IState
 	{
-		public void Enter()
-		{
-		}
+    private readonly IWindowService _windowService;
 
-		public void Exit()
+    public LevelCompleteState(IWindowService windowService) =>
+      _windowService = windowService;
+
+    public void Enter() => 
+      _windowService.Open(WindowId.LevelCompleteWindow);
+
+    public void Exit()
 		{
 		}
 	}

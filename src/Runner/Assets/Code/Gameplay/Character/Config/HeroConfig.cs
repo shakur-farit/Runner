@@ -7,5 +7,7 @@ namespace Code.Infrastructure.Installers
 	{
 		public GameObject Prefab;
 		public float MovementSpeed;
-	}
+    public float JumpForce;
+    public float GroundCheckRadius;
+  }
 }

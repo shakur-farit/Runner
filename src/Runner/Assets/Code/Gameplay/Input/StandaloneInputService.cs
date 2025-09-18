@@ -27,24 +27,33 @@ namespace Code.Infrastructure.Installers
 			if (CameraMain == null)
 				return Vector2.zero;
 
-			_screenPosition.x = UnityEngine.Input.mousePosition.x;
-			_screenPosition.y = UnityEngine.Input.mousePosition.y;
+			_screenPosition.x = Input.mousePosition.x;
+			_screenPosition.y = Input.mousePosition.y;
 			return CameraMain.ScreenToWorldPoint(_screenPosition);
 		}
 
 		public bool HasAxisInput() => GetHorizontalAxis() != 0 || GetVerticalAxis() != 0;
 
-		public float GetVerticalAxis() => UnityEngine.Input.GetAxisRaw("Vertical");
-		public float GetHorizontalAxis() => UnityEngine.Input.GetAxisRaw("Horizontal");
+		public float GetVerticalAxis() => Input.GetAxisRaw("Vertical");
+		public float GetHorizontalAxis() => Input.GetAxisRaw("Horizontal");
 
 
 		public bool GetLeftMouseButton() =>
-			UnityEngine.Input.GetMouseButton(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/;
+			Input.GetMouseButton(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/;
 
 		public bool GetLeftMouseButtonDown() =>
-			UnityEngine.Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject();
+			Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject();
 
 		public bool GetLeftMouseButtonUp() =>
-			UnityEngine.Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject();
-	}
+      Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject();
+
+    public bool GetJumpButton() =>
+      Input.GetKey(KeyCode.Space);
+
+    public bool GetJumpButtonDown() =>
+      Input.GetKeyDown(KeyCode.Space);
+
+    public bool GetJumpButtonUp() =>
+      Input.GetKeyUp(KeyCode.Space);
+  }
 }

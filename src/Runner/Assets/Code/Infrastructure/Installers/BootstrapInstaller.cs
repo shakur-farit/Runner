@@ -53,6 +53,8 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
 			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+			Container.Bind<IDeathService>().To<DeathService>().AsSingle();
+			Container.Bind<IRestartingService>().To<RestartingService>().AsSingle();
 		}
 
 		public void BindGameplayFactories()
@@ -69,5 +71,5 @@ namespace Code.Infrastructure.Installers
 
 		public void Initialize() => 
 			Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
-	}
+  }
 }

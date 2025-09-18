@@ -5,6 +5,8 @@ namespace Code.Infrastructure.Installers
 {
 	public class CameraFollow : MonoBehaviour
 	{
+		private const float Offset = 10f;
+
 		private ICameraProvider _cameraProvider;
 
 		[Inject]
@@ -22,7 +24,7 @@ namespace Code.Infrastructure.Installers
 			transform.position = new(
 				transform.position.x, 
 				transform.position.y,
-				_cameraProvider.FollowTarget.position.z - 15);
+				_cameraProvider.FollowTarget.position.z - Offset);
 		}
 	}
 }

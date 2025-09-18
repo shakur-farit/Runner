@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 2d11fa8e624f85d4cafee8a1efda1e10
   m_SerializeEntries:
+  - m_GUID: 0e26789afa50e774386e5cb210e0d11e
+    m_Address: Assets/StaticData/Window/GameOverWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 52fa1b6742e5f354595219b61eb0bb91
     m_Address: Assets/StaticData/MainMenuWindowConfig.asset
     m_ReadOnly: 0
@@ -28,6 +34,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccc5b985f2e5e4542bc27528754f2c93
+    m_Address: Assets/StaticData/Window/LevelCompleteWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d79af4a60f0dd1c4d94685dd2338b7c2
     m_Address: Assets/StaticData/FirstLevelConfig.asset
