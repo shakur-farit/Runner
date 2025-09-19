@@ -7,7 +7,9 @@ namespace Code.Infrastructure.Installers
 	{
 		public LevelTypeId TypeId;
 		public GameObject Environment;
+		public float RoadLength;
+		public float RoadWidth;
 		public Vector3 StartHeroPosition;
-		public float FinishXPosiotin;
+		public float FinishZPosiotion;
 	}
 }

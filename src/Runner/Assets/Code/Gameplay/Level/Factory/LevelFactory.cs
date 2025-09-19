@@ -21,7 +21,12 @@ namespace Code.Infrastructure.Installers
 			Environment environment = 
 				_instantiator.InstantiatePrefabForComponent<Environment>(config.Environment);
 
-			environment.SetStartPosition(config.StartHeroPosition);
+			environment
+				.Setup(
+				config.StartHeroPosition,
+				config.RoadLength,
+				config.RoadWidth,
+				config.FinishZPosiotion);
 
 			return environment;
 		}

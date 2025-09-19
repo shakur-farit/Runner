@@ -6,7 +6,6 @@ namespace Code.Infrastructure.Installers
   public class HeroMover : MonoBehaviour
   {
     [SerializeField] private Hero _hero;
-    [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private HeroAnimator _heroAnimator;
     
     private IInputService _input;
@@ -20,12 +19,22 @@ namespace Code.Infrastructure.Installers
 
     private void Move()
     {
-      float horizontalInput = _input.GetHorizontalAxis();
-      Vector3 move = new Vector3(horizontalInput * _hero.MovementSpeed, _rigidbody.velocity.y, _hero.MovementSpeed);
+	    Vector3 currentPosition = transform.position;
 
-      _rigidbody.velocity = move;
+	    float xInput = _hero.IsGrounded ? _input.GetHorizontalAxis() : 0f;
+	    float xMove = xInput * _hero.MovementSpeed * Time.fixedDeltaTime;
 
-      _heroAnimator.StartMoving();
-    }
+	    float zMove = _hero.MovementSpeed * Time.fixedDeltaTime;
+
+	    currentPosition.x += xMove;
+	    currentPosition.z += zMove;
+
+	    float halfClamp = _hero.XClamp / 2f;
+	    currentPosition.x = Mathf.Clamp(currentPosition.x, -halfClamp, halfClamp);
+
+	    transform.position = currentPosition;
+
+	    _heroAnimator.StartMoving();
+		}
   }
 }

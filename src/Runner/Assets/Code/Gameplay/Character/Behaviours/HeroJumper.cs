@@ -11,7 +11,6 @@ namespace Code.Infrastructure.Installers
     [SerializeField] private Hero _hero;
 
     private IInputService _input;
-    private bool _isGrounded;
 
     [Inject]
     public void Construct(IInputService input) => 
@@ -21,7 +20,7 @@ namespace Code.Infrastructure.Installers
     {
       CheckGround();
 
-      if (_input.GetJumpButtonDown() && _isGrounded) 
+      if (_input.GetJumpButtonDown() && _hero.IsGrounded) 
         Jump();
     }
 
@@ -29,7 +28,7 @@ namespace Code.Infrastructure.Installers
       _rigidbody.AddForce(Vector3.up * _hero.JumpForce, ForceMode.Impulse);
 
     private void CheckGround() => 
-      _isGrounded = Physics.CheckSphere(groundCheck.position, _hero.GroundCheckRadius, groundLayer);
+	    _hero.IsGrounded = Physics.CheckSphere(groundCheck.position, _hero.GroundCheckRadius, groundLayer);
 
     private void OnDrawGizmosSelected()
     {

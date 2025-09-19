@@ -15,13 +15,19 @@ namespace Code.Infrastructure.Installers
 			_instantiator = instantiator;
 		}
 
-		public Hero CreateHero(Vector3 at)
+		public Hero CreateHero(Vector3 at, float roadWidth)
 		{
 			HeroConfig config = _staticDataService.GetHeroConfig();
 
 			Hero hero = _instantiator.InstantiatePrefabForComponent<Hero>(config.Prefab);
 
-			hero.Setup(at, config.MovementSpeed, config.JumpForce, config.GroundCheckRadius);
+			hero
+				.Setup(
+					at, 
+					config.MovementSpeed, 
+					config.JumpForce, 
+					config.GroundCheckRadius,
+					roadWidth);
 
 			return hero;
 		}

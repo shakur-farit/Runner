@@ -23,7 +23,7 @@ namespace Code.Infrastructure.States.GameStates
 		public void Enter()
 		{
 			Environment environment = _levelFactory.CreateLevel(LevelTypeId.First);
-			Hero hero = _heroFactory.CreateHero(environment.StartPosition);
+			Hero hero = _heroFactory.CreateHero(environment.StartPosition, environment.RoadWidth);
 
 			SetCameraFollowTarget(hero.transform);
 		}

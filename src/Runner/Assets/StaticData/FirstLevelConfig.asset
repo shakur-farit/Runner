@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: FirstLevelConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  Environment: {fileID: 5717373771771427227, guid: cd0e74543748ad141b4657d7008932bb, type: 3}
-  StartHeroPosition: {x: 0, y: 0.5, z: -180}
-  FinishXPosiotin: 0
+  Environment: {fileID: 5377611237370061329, guid: cd0e74543748ad141b4657d7008932bb, type: 3}
+  RoadLength: 160
+  RoadWidth: 16
+  StartHeroPosition: {x: 0, y: 0.5, z: -79}
+  FinishZPosiotion: 79

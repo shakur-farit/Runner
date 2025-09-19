@@ -7,14 +7,21 @@ namespace Code.Infrastructure.Installers
 {
   public class HeroCollider : MonoBehaviour
   {
+	  private const int CoinValue = 1;
+
     private IDeathService _deathService;
     private IGameStateMachine _stateMachine;
+    private ICoinService _coinService;
 
     [Inject]
-    public void Constructor(IDeathService deathService, IGameStateMachine stateMachine)
+    public void Constructor(
+	    IDeathService deathService, 
+	    IGameStateMachine stateMachine,
+	    ICoinService coinService)
     {
       _deathService = deathService;
       _stateMachine = stateMachine;
+      _coinService = coinService;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,12 +49,11 @@ namespace Code.Infrastructure.Installers
       }
     }
 
-    private static void Pickup(Collider other)
+    private void Pickup(Collider other)
     {
-      if (other.gameObject.layer == (int)CollisionLayer.Collectable)
-      {
-        //pickup
-      }
+	    if (other.gameObject.layer == (int)CollisionLayer.Collectable)
+		    if (other.TryGetComponent(out Coin coin))
+			    _coinService.ChangeCoinCount(coin.Value);
     }
   }
 }

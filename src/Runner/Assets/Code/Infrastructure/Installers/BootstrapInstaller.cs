@@ -55,6 +55,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
 			Container.Bind<IDeathService>().To<DeathService>().AsSingle();
 			Container.Bind<IRestartingService>().To<RestartingService>().AsSingle();
+			Container.BindInterfacesAndSelfTo<CoinService>().AsSingle();
 		}
 
 		public void BindGameplayFactories()
