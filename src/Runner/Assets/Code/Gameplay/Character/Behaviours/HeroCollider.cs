@@ -53,7 +53,10 @@ namespace Code.Infrastructure.Installers
     {
 	    if (other.gameObject.layer == (int)CollisionLayer.Collectable)
 		    if (other.TryGetComponent(out Coin coin))
+		    {
 			    _coinService.ChangeCoinCount(coin.Value);
+			    coin.CallPickedup();
+		    }
     }
   }
 }

@@ -11,8 +11,11 @@ namespace Code.Infrastructure.States.GameStates
     public GameOverState(IWindowService windowService) => 
       _windowService = windowService;
 
-    public void Enter() => 
-      _windowService.Open(WindowId.GameOverWindow);
+    public void Enter()
+    {
+      _windowService.Close(WindowId.Hud);
+	    _windowService.Open(WindowId.GameOverWindow);
+    }
 
     public void Exit()
 		{

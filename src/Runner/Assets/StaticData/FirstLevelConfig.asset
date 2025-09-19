@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 1
   Environment: {fileID: 5377611237370061329, guid: cd0e74543748ad141b4657d7008932bb, type: 3}
-  RoadLength: 160
+  RoadLength: 320
   RoadWidth: 16
-  StartHeroPosition: {x: 0, y: 0.5, z: -79}
-  FinishZPosiotion: 79
+  StartHeroPosition: {x: 0, y: 0.5, z: -159}
+  FinishZPosiotion: 159

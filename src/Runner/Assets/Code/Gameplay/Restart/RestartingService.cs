@@ -4,9 +4,18 @@ namespace Code.Infrastructure.Installers
 {
   public class RestartingService : IRestartingService
   {
-    public event Action Restarted;
+	  public event Action Restarted;
 
-    public void Restart() => 
-      Restarted?.Invoke();
+	  private readonly ICoinCountReseter _reseter;
+
+	  public RestartingService(ICoinCountReseter reseter) => 
+		  _reseter = reseter;
+
+	  public void Restart()
+	  {
+			_reseter.ResetCoinCount();
+
+		  Restarted?.Invoke();
+	  }
   }
 }

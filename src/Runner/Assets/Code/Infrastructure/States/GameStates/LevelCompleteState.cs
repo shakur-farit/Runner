@@ -11,8 +11,11 @@ namespace Code.Infrastructure.States.GameStates
     public LevelCompleteState(IWindowService windowService) =>
       _windowService = windowService;
 
-    public void Enter() => 
-      _windowService.Open(WindowId.LevelCompleteWindow);
+    public void Enter()
+    {
+	    _windowService.Close(WindowId.Hud);
+			_windowService.Open(WindowId.LevelCompleteWindow);
+    }
 
     public void Exit()
 		{
