@@ -1,4 +1,4 @@
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level
 {
 	public enum LevelTypeId
 	{

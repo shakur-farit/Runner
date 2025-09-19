@@ -1,6 +1,7 @@
 using System;
+using Assets.Code.Gameplay.Loot.Service;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Restart
 {
   public class RestartingService : IRestartingService
   {

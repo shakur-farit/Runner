@@ -1,9 +1,9 @@
-using Code.Infrastructure.States.Factory;
-using Code.Infrastructure.States.Infrastructure;
+using Assets.Code.Infrastructure.States.Factory;
+using Assets.Code.Infrastructure.States.Infrastructure;
 using Zenject;
-using IState = Code.Infrastructure.States.Infrastructure.IState;
+using IState = Assets.Code.Infrastructure.States.Infrastructure.IState;
 
-namespace Code.Infrastructure.States.StateMachine
+namespace Assets.Code.Infrastructure.States.StateMachine
 {
 	public class GameStateMachine : ITickable, IGameStateMachine
 	{

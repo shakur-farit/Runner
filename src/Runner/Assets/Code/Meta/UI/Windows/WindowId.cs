@@ -1,4 +1,4 @@
-namespace Code.Meta.Ui.Windows
+namespace Assets.Code.Meta.UI.Windows
 {
 	public enum WindowId
 	{

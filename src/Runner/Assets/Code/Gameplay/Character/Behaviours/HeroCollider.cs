@@ -1,27 +1,33 @@
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
+using Assets.Code.Common.Extensions;
+using Assets.Code.Gameplay.Death;
+using Assets.Code.Gameplay.Loot.Service;
+using Assets.Code.Gameplay.SoundEffect;
+using Assets.Code.Gameplay.SoundEffect.Factory;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Behaviours
 {
   public class HeroCollider : MonoBehaviour
   {
-	  private const int CoinValue = 1;
-
     private IDeathService _deathService;
     private IGameStateMachine _stateMachine;
-    private ICoinService _coinService;
+    private ILootPickupService _lootPickupService;
+    private ISoundEffectFactory _soundEffectFactory;
 
     [Inject]
     public void Constructor(
 	    IDeathService deathService, 
 	    IGameStateMachine stateMachine,
-	    ICoinService coinService)
+      ILootPickupService lootPickupService,
+      ISoundEffectFactory soundEffectFactory)
     {
       _deathService = deathService;
       _stateMachine = stateMachine;
-      _coinService = coinService;
+      _lootPickupService = lootPickupService;
+      _soundEffectFactory = soundEffectFactory;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +42,7 @@ namespace Code.Infrastructure.Installers
       if (other.gameObject.layer == (int)CollisionLayer.Enemy)
       {
         _deathService.Die(gameObject);
+        _soundEffectFactory.CreateSoundEffect(SoundEffectTypeId.Lose, transform.position);
         _stateMachine.Enter<GameOverState>();
       }
     }
@@ -46,17 +53,22 @@ namespace Code.Infrastructure.Installers
       {
         _deathService.Die(gameObject);
         _stateMachine.Enter<LevelCompleteState>();
+        _soundEffectFactory.CreateSoundEffect(SoundEffectTypeId.Win, transform.position);
       }
     }
 
     private void Pickup(Collider other)
     {
-	    if (other.gameObject.layer == (int)CollisionLayer.Collectable)
-		    if (other.TryGetComponent(out Coin coin))
-		    {
-			    _coinService.ChangeCoinCount(coin.Value);
-			    coin.CallPickedup();
-		    }
+      if (other.gameObject.layer == (int)CollisionLayer.Collectable)
+      {
+        if (other.TryGetComponent(out Loot.Behaviours.Loot loot))
+        {
+          _lootPickupService.Pickup(loot.TypeId, loot.Value);
+          loot.CallPickedup();
+        }
+
+        _soundEffectFactory.CreateSoundEffect(SoundEffectTypeId.Pickup, transform.position);
+      }
     }
   }
 }

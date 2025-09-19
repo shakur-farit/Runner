@@ -1,7 +1,8 @@
+using Assets.Code.Gameplay.Camera.Service;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Infrastructure.Installers
 {
 	public class LevelInitializer : MonoBehaviour, IInitializable
 	{

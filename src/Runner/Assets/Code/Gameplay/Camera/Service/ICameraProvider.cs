@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Camera.Service
 {
 	public interface ICameraProvider
 	{
-		Camera MainCamera { get; }
+		UnityEngine.Camera MainCamera { get; }
 		Transform FollowTarget { get; }
-		void SetMainCamera(Camera mainCamera);
+		void SetMainCamera(UnityEngine.Camera mainCamera);
 		void SetFollowTarget(Transform followTarget);
 	}
 }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Code.Infrastructure.AssetsProvider
+namespace Assets.Code.Infrastructure.AssetsProvider
 {
 	public interface IAssetProvider
 	{

@@ -1,6 +1,7 @@
+using Assets.Code.Gameplay.Character.Behaviours;
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Factory
 {
 	public interface IHeroFactory
 	{

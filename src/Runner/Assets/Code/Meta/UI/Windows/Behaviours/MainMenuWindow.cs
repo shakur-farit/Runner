@@ -1,19 +1,19 @@
-using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.Ui.Windows.Factory;
-using Unity.VisualScripting;
+using Assets.Code.Infrastructure.Loading;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Ui.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class MainMenuWindow : BaseWindow
 	{
 		[SerializeField] private Button _startGameButton;
+    [SerializeField] private Button _quitButton;
 
-		private IGameStateMachine _stateMachine;
+    private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
 
 		[Inject]
@@ -29,12 +29,25 @@ namespace Code.Meta.Ui.Windows.Behaviours
 		{
 			_startGameButton.onClick.AddListener(EnterToBattle);
 			_startGameButton.onClick.AddListener(CloseWindow);
-		}
+
+      _quitButton.onClick.AddListener(QuitGame);
+    }
 
 		private void EnterToBattle() =>
 			_stateMachine.Enter<LoadingGameplaySceneState, string>(Scenes.Gameplay);
 
-		private void CloseWindow() =>
+    private void QuitGame()
+    {
+      CloseWindow();
+
+#if UNITY_EDITOR
+      UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+    }
+
+    private void CloseWindow() =>
 			_windowService.Close(WindowId.MainMenuWindow);
 	}
 }

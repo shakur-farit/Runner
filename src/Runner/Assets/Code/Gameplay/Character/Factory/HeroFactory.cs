@@ -1,8 +1,10 @@
-using Code.Infrastructure.StaticData;
+using Assets.Code.Gameplay.Character.Behaviours;
+using Assets.Code.Gameplay.Character.Config;
+using Assets.Code.Infrastructure.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{

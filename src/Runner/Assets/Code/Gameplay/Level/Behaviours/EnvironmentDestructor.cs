@@ -1,7 +1,8 @@
+using Assets.Code.Gameplay.Restart;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level.Behaviours
 {
   public class EnvironmentDestructor : MonoBehaviour
   {

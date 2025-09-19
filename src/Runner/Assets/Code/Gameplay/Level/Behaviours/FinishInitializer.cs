@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level.Behaviours
 {
 	public class FinishInitializer : MonoBehaviour
 	{

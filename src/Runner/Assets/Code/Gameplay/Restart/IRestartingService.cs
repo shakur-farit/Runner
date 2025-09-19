@@ -1,6 +1,6 @@
 using System;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Restart
 {
   public interface IRestartingService
   {

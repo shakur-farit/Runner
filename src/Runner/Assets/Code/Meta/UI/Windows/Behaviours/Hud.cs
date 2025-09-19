@@ -1,9 +1,9 @@
-using Code.Infrastructure.Installers;
+using Assets.Code.Gameplay.Loot.Service;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Ui.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class Hud : BaseWindow
 	{

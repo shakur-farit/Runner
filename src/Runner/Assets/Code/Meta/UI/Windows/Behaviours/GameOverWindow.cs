@@ -1,14 +1,15 @@
-using Code.Infrastructure.Installers;
-using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.Ui.Windows.Factory;
+using Assets.Code.Gameplay.Loot.Service;
+using Assets.Code.Gameplay.Restart;
+using Assets.Code.Infrastructure.Loading;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Meta.UI.Windows.Service;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Ui.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
   public class GameOverWindow : BaseWindow
   {

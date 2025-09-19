@@ -1,7 +1,10 @@
+using Assets.Code.Gameplay.Input;
+using Assets.Code.Gameplay.SoundEffect;
+using Assets.Code.Gameplay.SoundEffect.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Behaviours
 {
   public class HeroJumper : MonoBehaviour
   {
@@ -11,10 +14,14 @@ namespace Code.Infrastructure.Installers
     [SerializeField] private Hero _hero;
 
     private IInputService _input;
+    private ISoundEffectFactory _soundEffectFactory;
 
     [Inject]
-    public void Construct(IInputService input) => 
+    public void Construct(IInputService input, ISoundEffectFactory soundEffectFactory)
+    {
       _input = input;
+      _soundEffectFactory = soundEffectFactory;
+    }
 
     private void Update()
     {
@@ -24,19 +31,17 @@ namespace Code.Infrastructure.Installers
         Jump();
     }
 
-    private void Jump() => 
+    private void Jump()
+    {
       _rigidbody.AddForce(Vector3.up * _hero.JumpForce, ForceMode.Impulse);
+
+      CreateJumpSoundEffect();
+    }
 
     private void CheckGround() => 
 	    _hero.IsGrounded = Physics.CheckSphere(groundCheck.position, _hero.GroundCheckRadius, groundLayer);
 
-    private void OnDrawGizmosSelected()
-    {
-      if (groundCheck != null)
-      {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, _hero.GroundCheckRadius);
-      }
-    }
+    private void CreateJumpSoundEffect() => 
+      _soundEffectFactory.CreateSoundEffect(SoundEffectTypeId.Jump, gameObject.transform.position);
   }
 }

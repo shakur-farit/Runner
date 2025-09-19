@@ -1,9 +1,8 @@
-using Code.Infrastructure.States.Infrastructure;
-using Code.Meta.Ui.Windows;
-using Code.Meta.Ui.Windows.Factory;
-using UnityEngine;
+using Assets.Code.Infrastructure.States.Infrastructure;
+using Assets.Code.Meta.UI.Windows;
+using Assets.Code.Meta.UI.Windows.Service;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class HomeScreenState : IState
 	{

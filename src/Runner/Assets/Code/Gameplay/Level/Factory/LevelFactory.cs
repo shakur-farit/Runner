@@ -1,7 +1,9 @@
-using Code.Infrastructure.StaticData;
+using Assets.Code.Gameplay.Level.Behaviours;
+using Assets.Code.Gameplay.Level.Config;
+using Assets.Code.Infrastructure.StaticData;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level.Factory
 {
 	public class LevelFactory : ILevelFactory
 	{
@@ -26,6 +28,8 @@ namespace Code.Infrastructure.Installers
 				config.StartHeroPosition,
 				config.RoadLength,
 				config.RoadWidth,
+				config.EnemiesCount,
+				config.LootCount,
 				config.FinishZPosiotion);
 
 			return environment;

@@ -1,13 +1,26 @@
-using Code.Infrastructure.AssetsProvider;
-using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.Factory;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Infrastructure.StaticData;
-using Code.Meta.Ui.Windows.Factory;
+using Assets.Code.Gameplay.Camera.Service;
+using Assets.Code.Gameplay.Character.Factory;
+using Assets.Code.Gameplay.Death;
+using Assets.Code.Gameplay.Enemy.Factory;
+using Assets.Code.Gameplay.Enemy.Service;
+using Assets.Code.Gameplay.Input;
+using Assets.Code.Gameplay.Level.Factory;
+using Assets.Code.Gameplay.Loot.Factory;
+using Assets.Code.Gameplay.Loot.Service;
+using Assets.Code.Gameplay.Posiotions;
+using Assets.Code.Gameplay.Restart;
+using Assets.Code.Gameplay.SoundEffect.Factory;
+using Assets.Code.Infrastructure.AssetsProvider;
+using Assets.Code.Infrastructure.Loading;
+using Assets.Code.Infrastructure.States.Factory;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Infrastructure.StaticData;
+using Assets.Code.Meta.UI.Windows.Factory;
+using Assets.Code.Meta.UI.Windows.Service;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Infrastructure.Installers
 {
 	public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
 	{
@@ -55,13 +68,20 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
 			Container.Bind<IDeathService>().To<DeathService>().AsSingle();
 			Container.Bind<IRestartingService>().To<RestartingService>().AsSingle();
-			Container.BindInterfacesAndSelfTo<CoinService>().AsSingle();
-		}
+			Container.Bind<ILootPickupService>().To<LootPickupService>().AsSingle();
+      Container.BindInterfacesAndSelfTo<CoinService>().AsSingle();
+      Container.Bind<IEnemySpawner>().To<EnemySpawner>().AsSingle();
+      Container.Bind<ILootSpawner>().To<LootSpawner>().AsSingle();
+      Container.Bind<IOccupiedPositionsLauncher>().To<OccupiedPositionsLauncher>().AsSingle();
+    }
 
 		public void BindGameplayFactories()
 		{
 			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
 			Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
+			Container.Bind<ISoundEffectFactory>().To<SoundEffectFactory>().AsSingle();
 		}
 
 		public void BindUIServices() => 

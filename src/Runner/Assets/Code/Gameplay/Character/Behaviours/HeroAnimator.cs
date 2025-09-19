@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Behaviours
 {
   public class HeroAnimator : MonoBehaviour
   {

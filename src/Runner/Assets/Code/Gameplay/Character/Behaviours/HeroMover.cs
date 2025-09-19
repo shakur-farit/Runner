@@ -1,7 +1,8 @@
+using Assets.Code.Gameplay.Input;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Behaviours
 {
   public class HeroMover : MonoBehaviour
   {

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 2d11fa8e624f85d4cafee8a1efda1e10
   m_currentHash:
     serializedVersion: 2
-    Hash: 5bd472f700a90b07a496b74a1705a451
+    Hash: e4e2a126633344e01d5697f888ffe32d
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -90,6 +90,9 @@ MonoBehaviour:
     - WindowConfig
     - LevelConfig
     - HeroConfig
+    - EnemyConfig
+    - LootConfig
+    - SoundEffectConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 577d065ba8e725c4db082bf00f4a9b95, type: 2}

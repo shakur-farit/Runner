@@ -1,7 +1,7 @@
-using Code.Infrastructure.States.Infrastructure;
+using Assets.Code.Infrastructure.States.Infrastructure;
 using Zenject;
 
-namespace Code.Infrastructure.States.Factory
+namespace Assets.Code.Infrastructure.States.Factory
 {
 	public class StateFactory : IStateFactory
 	{

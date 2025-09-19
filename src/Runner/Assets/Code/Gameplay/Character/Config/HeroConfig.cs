@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Character.Config
 {
 	[CreateAssetMenu(menuName = "Runner/Hero Config", fileName = "HeroConfig")]
 	public class HeroConfig : ScriptableObject

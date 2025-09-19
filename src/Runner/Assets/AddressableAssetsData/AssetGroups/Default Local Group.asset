@@ -23,17 +23,47 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ee95903bfa92eb40bda322562a9107e
+    m_Address: Assets/StaticData/SoundEffect/WinSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 229a783e6209afa43845bd51d8714a15
+    m_Address: Assets/StaticData/SoundEffect/PickupSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 52fa1b6742e5f354595219b61eb0bb91
     m_Address: Assets/StaticData/MainMenuWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e5af6a6d69fc7d4e9e122d52b6e7b0f
+    m_Address: Assets/StaticData/SoundEffect/LoseSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 843fa59d4fbaaed458435e387c275462
+    m_Address: Assets/StaticData/SoundEffect/JumpSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 920c21a3285495a438d16e73194729ef
     m_Address: Assets/StaticData/HeroConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5ca1a403f1457949ab1bd899cb968bf
+    m_Address: Assets/StaticData/Enemy/WalkableEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc32b879fa72fe94d84292d34ee9366d
     m_Address: Assets/StaticData/Window/HudWindowConfig.asset
@@ -52,6 +82,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e93e352572f20984fa642e6719ee3ed1
+    m_Address: Assets/StaticData/Enemy/StaticEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee56a3720553ef341893da6044e6661c
+    m_Address: Assets/StaticData/Loot/CoinConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 11fc81156d6f2a54291bc94fd1ea19b5, type: 2}

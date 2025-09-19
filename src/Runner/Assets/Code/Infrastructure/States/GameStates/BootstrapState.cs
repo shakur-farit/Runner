@@ -1,10 +1,9 @@
-using Code.Infrastructure.AssetsProvider;
-using Code.Infrastructure.States.Infrastructure;
-using Code.Infrastructure.States.StateMachine;
-using Code.Infrastructure.StaticData;
-using UnityEngine;
+using Assets.Code.Infrastructure.AssetsProvider;
+using Assets.Code.Infrastructure.States.Infrastructure;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Infrastructure.StaticData;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class BootstrapState : IState
 	{

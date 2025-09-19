@@ -1,4 +1,4 @@
-namespace Code.Infrastructure.States.Infrastructure
+namespace Assets.Code.Infrastructure.States.Infrastructure
 {
 	public interface IState : IExitableState
 	{

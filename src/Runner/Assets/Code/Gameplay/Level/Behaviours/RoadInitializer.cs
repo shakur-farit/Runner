@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level.Behaviours
 {
 	public class RoadInitializer : MonoBehaviour
 	{

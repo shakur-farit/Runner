@@ -1,15 +1,13 @@
-using System;
 using UnityEngine;
-using Zenject.Asteroids;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Camera.Service
 {
 	public class CameraProvider : ICameraProvider
 	{
-		public Camera MainCamera { get; private set; }
+		public UnityEngine.Camera MainCamera { get; private set; }
 		public Transform FollowTarget { get; private set; }
 
-		public void SetMainCamera(Camera mainCamera) => 
+		public void SetMainCamera(UnityEngine.Camera mainCamera) => 
 			MainCamera = mainCamera;
 
 		public void SetFollowTarget(Transform followTarget) => 

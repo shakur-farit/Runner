@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers
+namespace Assets.Code.Gameplay.Level.Config
 {
 	[CreateAssetMenu(menuName = "Runner/Level Config", fileName = "LevelConfig")]
 	public class LevelConfig : ScriptableObject
@@ -9,6 +9,8 @@ namespace Code.Infrastructure.Installers
 		public GameObject Environment;
 		public float RoadLength;
 		public float RoadWidth;
+		public int EnemiesCount;
+		public int LootCount;
 		public Vector3 StartHeroPosition;
 		public float FinishZPosiotion;
 	}
