@@ -9,21 +9,18 @@ namespace Assets.Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IAssetProvider _assetProvider;
-		private readonly IStaticDataService _staticDataService;
 
 		public BootstrapState(
 			IGameStateMachine stateMachine, 
-			IAssetProvider assetProvider,
-			IStaticDataService staticDataService)
+			IAssetProvider assetProvider)
 		{
 			_stateMachine = stateMachine;
 			_assetProvider = assetProvider;
-			_staticDataService = staticDataService;
 		}
+
 		public async void Enter()
 		{
 			await _assetProvider.Initialize();
-			await _staticDataService.LoadAll();
 
 			_stateMachine.Enter<LoadStaticDataState>();
 		}
